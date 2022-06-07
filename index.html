@@ -10,7 +10,6 @@
 <body>
 <script>
 user = "guest";
-
 files = {
     "hello.txt": `
                     Hello,
@@ -53,16 +52,21 @@ $('body').terminal({
         }
     },
 
-    sudo: function() {
-        this.set_mask(false).read('Password: ').then(password => {
-            if(password == '12345678') {
-                this.echo('Welcome back, root.');
-                user = 'root';
-            } else {
-                this.error('Wrong password.');
-            }
-        });
-        this.set_mask('*');
+    sudo: function(arg) {
+        if(arg == "su") {
+            this.set_mask(false).read('Password: ').then(password => {
+                if(password == '12345678') {
+                    this.echo('Welcome back, root.');
+                    user = 'root';
+                    this.set_prompt ('root@server:$ ');
+                } else {
+                    this.error('Wrong password.');
+                }
+            });
+            this.set_mask('*');
+        } else {
+            this.error('Usage: sudo su');
+        }
     },
 
     neofetch: function() {
@@ -85,6 +89,7 @@ $('body').terminal({
 }, {
     checkArity: false,
     greetings: '/home/broekman \nType "help" for available commands \n\nNote: This site is still in development so not everything is working yet.',
+    prompt: user + '@server:$ ',
 });
 </script>
 </body>
