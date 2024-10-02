@@ -9,4 +9,59 @@ sven.software
 
 body {
 	font-family: 'Inter', sans-serif;
+	background-color: #f9f8f3;
+	display: flex;
+	justify-content: center;
+}
+
+main {
+	padding-top: 15em;
+	width: 100%;
+	margin: 0;
+	display: grid;
+	width: 40%;
+}
+
+h1 {
+	color: #202124e0;
+	margin: 0.2em;
+	margin-left: 0;
+}
+
+p.subtext {
+	font-weight: bolder;
+	color: #2021248f;
+	margin: 0;
+}
+
+.about {
+  font-size: 1.2em;             
+  color: #202124c0;             
+  line-height: 1.6;             
+  margin-top: 1.5em;            
+  padding: 1em 0;               
+  border-top: 2px solid #20212440; 
+}
+
+.links-bar {
+  display: flex;
+  justify-content: center;       
+  gap: 2em;                      
+  padding: 1em 0;                
+  margin-top: 2em;               
+}
+
+.links-bar a {
+  font-size: 1.1em;
+  color: #202124c0;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.links-bar a:hover {
+  text-decoration: underline;    
+}
+
+.links-bar a.disabled:hover {
+	text-decoration: none;
 }
