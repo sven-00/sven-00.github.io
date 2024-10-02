@@ -16,10 +16,21 @@ body {
 
 main {
 	padding-top: 15em;
-	width: 100%;
 	margin: 0;
 	display: grid;
 	width: 40%;
+}
+
+@media(max-width: 768px) {
+	main {
+		width: 100%;
+	}
+}
+
+@media(max-width: 1000px) and (min-width: 769px) {
+	main {
+		width: 70%;
+	}
 }
 
 h1 {
