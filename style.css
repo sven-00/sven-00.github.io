@@ -29,7 +29,9 @@ main {
 
 @media(max-width: 1000px) and (min-width: 769px) {
 	main {
-		width: 70%;
+		width: 90%;
+		padding-top: 1em;
+		font-size: 32px;
 	}
 }
 
